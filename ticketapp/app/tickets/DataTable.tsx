@@ -1,3 +1,4 @@
+import TicketPriority from "@/components/TicketPriority";
 import TicketStatusBadge from "@/components/TicketStatusBadge";
 import {
   Table,
@@ -66,7 +67,9 @@ const DataTable = ({ tickets }: Props) => {
                       </div>
                     </TableCell>
                     <TableCell>
-                      <div className="flex justify-center"></div>
+                      <div className="flex justify-center">
+                        <TicketPriority priority={ticket.priority} />
+                      </div>
                     </TableCell>
                     <TableCell>
                       {ticket.createdAt.toLocaleDateString("en-US", {
