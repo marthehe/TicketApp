@@ -1,3 +1,4 @@
+import TicketStatusBadge from "@/components/TicketStatusBadge";
 import {
   Table,
   TableBody,
@@ -60,7 +61,9 @@ const DataTable = ({ tickets }: Props) => {
                       <Link href={`/tickets/${ticket.id}`}>{ticket.title}</Link>
                     </TableCell>
                     <TableCell>
-                      <div className="flex justify-center"></div>
+                      <div className="flex justify-center">
+                        <TicketStatusBadge status={ticket.status} />
+                      </div>
                     </TableCell>
                     <TableCell>
                       <div className="flex justify-center"></div>
