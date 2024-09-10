@@ -12,6 +12,7 @@ import TicketStatusBadge from "@/components/TicketStatusBadge";
 import TicketPriority from "@/components/TicketPriority";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
+import ReactMarkDown from "react-markdown";
 
 interface Props {
   ticket: Ticket;
@@ -40,7 +41,7 @@ const TicketDetail = ({ ticket }: Props) => {
           </CardDescription>
         </CardHeader>
         <CardContent className="prose dark:prose-invert">
-          {ticket.description}
+          <ReactMarkDown>{ticket.description}</ReactMarkDown>
         </CardContent>
         <CardFooter>
           Updated:{" "}
@@ -62,6 +63,14 @@ const TicketDetail = ({ ticket }: Props) => {
           })}`}
         >
           Edit Ticket
+        </Link>
+        <Link
+          href={`/tickets/edit/${ticket.id}`}
+          className={`${buttonVariants({
+            variant: "default",
+          })}`}
+        >
+          Delete Ticket
         </Link>
       </div>
     </div>
