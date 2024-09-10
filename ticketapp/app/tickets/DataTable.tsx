@@ -30,8 +30,9 @@ const DataTable = ({ tickets, searchParams }: Props) => {
                 <Link href={{ query: { ...searchParams, orderBy: "title" } }}>
                   Title
                 </Link>
-
-                <ArrowDown className="inline p-1" />
+                {"title" === searchParams.orderBy && (
+                  <ArrowDown className="inline p-1" />
+                )}
               </TableHead>
               <TableHead>
                 <div className="flex justify-center">
@@ -43,7 +44,6 @@ const DataTable = ({ tickets, searchParams }: Props) => {
                   {"status" === searchParams.orderBy && (
                     <ArrowDown className="inline p-1" />
                   )}
-                  <ArrowDown className="inline p-1" />
                 </div>
               </TableHead>
               <TableHead>
@@ -56,7 +56,6 @@ const DataTable = ({ tickets, searchParams }: Props) => {
                   {"priority" === searchParams.orderBy && (
                     <ArrowDown className="inline p-1" />
                   )}
-                  <ArrowDown className="inline p-1" />
                 </div>
               </TableHead>
               <TableHead>
@@ -68,7 +67,6 @@ const DataTable = ({ tickets, searchParams }: Props) => {
                 {"createdAt" === searchParams.orderBy && (
                   <ArrowDown className="inline p-1" />
                 )}
-                <ArrowDown className="inline p-1" />
               </TableHead>
             </TableRow>
           </TableHeader>
